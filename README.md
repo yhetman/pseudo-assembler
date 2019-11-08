@@ -37,5 +37,12 @@ It will read the code processed from the file *.s* given as argument, and write 
 | and | 6 | REG or DIR or IND | REG or DIR or IND | REG |
 | or | 7 | REG or DIR or IND | REG or DIR or IND | REG |
 | xor | 8 | REG or DIR or IND | REG or DIR or IND | REG |
-
+| zjmp | 9| DIR | - | - |
+| ldi | 10 | REG or DIR or IND | REG or DIR | REG |
+| sti | 11 | REG | REG or DIR or IND | DIR or REG |
+| fork | 12 | DIR | - | - |
+| lld | 13 | DIR or IND | REG |
+| lldi | 14 | REG or DIR or IND | REG or DIR | REG |
+| lfork | 15 | DIR | - | - |
+| aff | 16 | REG | - | - |
   
