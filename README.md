@@ -37,4 +37,5 @@ It will read the code processed from the file *.s* given as argument, and write 
 | and | 6 | REG or DIR or IND | REG or DIR or IND | REG |
 | or | 7 | REG or DIR or IND | REG or DIR or IND | REG |
 | xor | 8 | REG or DIR or IND | REG or DIR or IND | REG |
+
   
