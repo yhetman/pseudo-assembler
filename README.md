@@ -28,7 +28,7 @@ It will read the code processed from the file *.s* given as argument, and write 
 ### Operations
 
 | NAME | INDEX | FIRST ARG | SECOND ARG | THIRD ARG |
-| ---- | ----- | --------- | ---------- | --------- |
+|:----:|:-----:|:---------:|:----------:|:---------:|
 | live | 1 | DIR | - | - |
 | ld | 2 | DIR or IND | REG | - |
 | st | 3 | REG | IND or REG | - |
@@ -45,4 +45,17 @@ It will read the code processed from the file *.s* given as argument, and write 
 | lldi | 14 | REG or DIR or IND | REG or DIR | REG |
 | lfork | 15 | DIR | - | - |
 | aff | 16 | REG | - | - |
-  
+ 
+### Encoding of arguments
+
+ It can be seen that there are operations that can use different types of arguments on different places of the operation call. So there's a problem how to differ and store what types of arguments were given. The thing is that arguments' types are encoded with one byte.
+
+1) We devide byte into 4 pairs of bits: each pair corresponds to a particular argument.
+2) Maximum number of arguments is 3, but we have 4 pairs of bits, that's why the last pair will always be filled with zeros.
+3) | TYPE OF ARGUMENT | PAIR OF BITS |
+|:----------------:|:------------:|
+| REGISTRY | 01 |
+| INDIRECT | 10 |
+| DIRECT | 11 |
+4) As a result we have a byte that encodes all types of arguments given to a particular option. Convert this result from binary to hexadecimal.
+
